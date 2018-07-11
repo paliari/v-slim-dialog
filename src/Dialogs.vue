@@ -60,10 +60,10 @@ export default {
       }
     },
 
-    onClose(item, response) {
-      item.resolve(
-        item.prompt ? { value: item.prompt.value, ok: response } : response
-      )
+    onClose(item, ok) {
+      const response = {ok}
+      if (item.prompt) response.value = item.prompt.value
+      item.resolve(response)
       item.show = false
       this.remove(item)
     },
