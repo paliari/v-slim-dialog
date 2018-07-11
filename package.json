@@ -5,6 +5,20 @@
   "main": "dist/v-slim-dialog.js",
   "repository": "git@github.com:paliari/v-dialog.git",
   "author": "Marcos Paliari <marcos@paliari.com.br>",
+  "keywords": [
+    "vue",
+    "vuejs",
+    "v-slim-dialog",
+    "vue-slim-dialog",
+    "dialog",
+    "dialogs",
+    "slim",
+    "alert",
+    "confirm",
+    "prompt",
+    "v-dialog",
+    "v-dialogs"
+  ],
   "scripts": {
     "dist": "poi build",
     "start": "yarn dev",
