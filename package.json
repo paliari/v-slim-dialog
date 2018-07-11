@@ -1,6 +1,6 @@
 {
   "name": "v-dialog",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Vue Dialog",
   "main": "index.js",
   "repository": "git@github.com:paliari/v-dialog.git",
