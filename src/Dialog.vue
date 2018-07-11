@@ -1,9 +1,9 @@
 <template lang="pug">
   .v-dialog(:class='{active: show, [`v-dialog-${item.size}`]: item.size}')
-    .v-dialog-overlay(@click='onClose')
+    .v-dialog-overlay(@click='onClose()')
     .v-dialog-container
       .v-dialog-header
-        a.v-dialog-btn.v-dialog-btn-close(aria-label='Fechar' @click='onClose')
+        a.v-dialog-btn.v-dialog-btn-close(aria-label='Fechar' @click='onClose(false)')
         .v-dialog-title(v-if='item.title') {{ item.title }}
       .v-dialog-body
         .content
@@ -147,7 +147,7 @@ export default {
       height 16px
       line-height 16px
       margin-left 8px
-      margin-right -2px
+      margin-right -15px
       padding 0
       width 16px
       float right
