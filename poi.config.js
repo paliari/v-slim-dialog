@@ -1,10 +1,10 @@
 module.exports = {
   entry: {
-    'v-dialog': './src/index.js'
+    'v-slim-dialog': './src/index.js'
   },
   cleanOutDir: true,
   format: 'cjs',
-  moduleName: 'iPetUtils',
+  moduleName: 'vSlimDialog',
   output: {
     filename: '[name].js',
     path: __dirname + '/dist'

@@ -2,7 +2,7 @@
   "name": "v-slim-dialog",
   "version": "0.0.2",
   "description": "Vue Dialog",
-  "main": "index.js",
+  "main": "dist/v-slim-dialog.js",
   "repository": "git@github.com:paliari/v-dialog.git",
   "author": "Marcos Paliari <marcos@paliari.com.br>",
   "scripts": {
