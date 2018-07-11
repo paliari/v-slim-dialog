@@ -5,9 +5,21 @@
   "main": "index.js",
   "repository": "git@github.com:paliari/v-dialog.git",
   "author": "Marcos Paliari <marcos@paliari.com.br>",
+  "scripts": {
+    "dist": "poi build",
+    "start": "yarn dev",
+    "release": "yarn dist"
+  },
+  "files": [
+    "dist/"
+  ],
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.53",
-    "poi": "^10.2.9"
+    "poi": "^10.2.9",
+    "pug": "^2.0.3",
+    "pug-plain-loader": "^1.0.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2"
   }
 }
