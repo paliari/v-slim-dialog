@@ -32,6 +32,17 @@ import SlimDialog from 'v-slim-dialog'
 Vue.use(SlimDialog)
 ```
 
+## Options params
+
+| Name        | Type               | Required | Default value | Info                                                 |
+| ----------- | ------------------ | -------- | ------------- | ---------------------------------------------------- |
+| title       | String             | No       |               | Title of modal                                       |
+| okLabel     | String             | No       | OK            | Label of button OK                                   |
+| cancelLabel | String             | No       | Cancel        | Label of button cancel                               |
+| size        | String('sm'or'lg') | No       |               | Size of modal                                        |
+| prompt      | Object             | No       |               | Hash for prompt {value: '', component: VueComponent} |
+
+
 ## In your component
 
 ```js
