@@ -1,6 +1,7 @@
 <template lang="pug">
-  input.v-dialog-input(v-model='model')
+  input(v-model='model')
 </template>
+
 <script>
 export default {
   props: {
@@ -20,7 +21,7 @@ export default {
   created() {
     setTimeout(() => {
       this.$el.focus()
-    }, 300)
+    }, 0)
   }
 }
 </script>
