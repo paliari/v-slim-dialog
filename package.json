@@ -1,5 +1,5 @@
 {
-  "name": "v-dialog",
+  "name": "v-slim-dialog",
   "version": "0.0.1",
   "description": "Vue Dialog",
   "main": "index.js",
