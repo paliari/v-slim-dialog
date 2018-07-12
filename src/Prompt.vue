@@ -18,10 +18,9 @@ export default {
       }
     }
   },
-  created() {
-    setTimeout(() => {
-      this.$el.focus()
-    }, 0)
+
+  mounted() {
+    this.$el.focus()
   }
 }
 </script>
