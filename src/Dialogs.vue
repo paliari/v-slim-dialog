@@ -16,7 +16,7 @@ export default {
     }
   },
   methods: {
-    open({ message, title, cancelLabel, prompt, size, okLabel = 'OK' }) {
+    open( message, { title, cancelLabel, prompt, size, okLabel = 'OK' }) {
       if (!this.$parent) {
         this.$mount()
         document.body.appendChild(this.$el)
@@ -39,18 +39,18 @@ export default {
 
     alert(message, options = {}) {
       const { title, okLabel = 'OK', size } = options
-      return this.open({ message, title, okLabel })
+      return this.open( message, { title, okLabel, size })
     },
 
     confirm(message, options = {}) {
       const { title, cancelLabel = 'Cancel', okLabel = 'OK', size } = options
-      return this.open({ message, title, cancelLabel, okLabel, size })
+      return this.open( message, { title, cancelLabel, okLabel, size })
     },
 
     prompt(message, options = {}) {
       let { title, okLabel = 'OK', size, prompt } = options
       prompt = Object.assign({ value: '', component: Prompt }, prompt)
-      return this.open({ message, title, okLabel, prompt, size })
+      return this.open(message, { title, okLabel, prompt, size })
     },
 
     remove(item) {

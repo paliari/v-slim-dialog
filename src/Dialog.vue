@@ -3,7 +3,7 @@
     .v-dialog-overlay(@click='onClose()')
     .v-dialog-container
       .v-dialog-header
-        a.v-dialog-btn.v-dialog-btn-close(aria-label='Fechar' @click='onClose(false)')
+        a.v-dialog-btn.v-dialog-btn-close(aria-label='Fechar' @click='onClose()')
         .v-dialog-title(v-if='item.title') {{ item.title }}
       .v-dialog-body
         .content
@@ -59,8 +59,6 @@ export default {
       max-width 320px
       padding 0 8px
   &.v-dialog-lg
-    .v-dialog-overlay
-      background #fff
     .v-dialog-container
       box-shadow none
       max-width 960px
