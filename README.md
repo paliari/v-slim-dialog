@@ -53,6 +53,8 @@ methods: {
 //...
 ```
 
+![](alert.gif)
+
 ### confirm
 
 ```js
@@ -73,6 +75,8 @@ methods: {
 }
 //...
 ```
+
+![](confirm.gif)
 
 ### prompt
 
@@ -110,6 +114,8 @@ methods: {
 }
 //...
 ```
+
+![](prompt.gif)
 
 ## Sample custom prompt Component
 
