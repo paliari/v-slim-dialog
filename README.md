@@ -7,7 +7,7 @@
 ```bash
 yarn add v-slim-dialog
 # Or using npm
-npm install v-slim-dialog
+npm install v-slim-dialog --save
 ```
 
 # Usage
