@@ -19,6 +19,12 @@ export default {
     }
   },
 
+  methods: {
+    isValid() {
+      return Boolean(String(this.model).trim())
+    }
+  },
+
   mounted() {
     this.$el.focus()
   }
