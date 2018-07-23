@@ -1,6 +1,6 @@
 {
   "name": "v-slim-dialog",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Vue Dialog",
   "main": "dist/v-slim-dialog.js",
   "repository": "git@github.com:paliari/v-dialog.git",
