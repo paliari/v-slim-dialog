@@ -8,12 +8,13 @@
       .v-dialog-body
         .content
           div {{ item.message }}
-          form(v-if='item.prompt' @submit.prevent='onClose(true)')
-            .v-dialog-input(:is='item.prompt.component' v-model='item.prompt.value')
+          form(v-if='item.prompt' @submit.prevent='onOk')
+            .v-dialog-input(:is='item.prompt.component' v-model='item.prompt.value' ref='prompt' @input='onPrompt')
+            .prompt-error-message(v-if='!valid') {{ item.prompt.invalidMessage }}
       .v-dialog-footer
         a.v-dialog-btn.v-dialog-btn-danger(@click='onClose(false)' v-if='item.cancelLabel')
           | {{ item.cancelLabel }}
-        a.btn.btn-link.success(@click='onClose(true)') {{ item.okLabel }}
+        a.v-dialog-btn.success(@click='onOk', :class='{disabled: !valid}', :disabled='!valid') {{ item.okLabel }}
 </template>
 
 <script>
@@ -29,9 +30,32 @@ export default {
     },
   },
 
+  data() {
+    return {
+      valid: this.isValid()
+    }
+  },
+
   methods: {
+    isValid() {
+      if (this.item.prompt) {
+        return this.$refs.prompt && this.$refs.prompt.isValid()
+      }
+      return true
+    },
+
+    onPrompt() {
+      setTimeout(() => {this.valid = this.isValid()})
+    },
+
     onClose(response) {
       this.$emit('close', this.item, response)
+    },
+    
+    onOk() {
+      if (this.valid) {
+        this.onClose(true)
+      }
     }
   }
 
@@ -114,6 +138,9 @@ export default {
     .v-dialog-input
       display block
       width 100%
+    .prompt-error-message
+      color #d9534f
+      font-size 14px
   .v-dialog-footer
     padding 16px
     text-align right
@@ -152,4 +179,8 @@ export default {
       color #50596c
       &::before
         content "\2715"
+    &.disabled, &[disabled], &:disabled
+      cursor default
+      opacity .5
+      pointer-events none
 </style>
