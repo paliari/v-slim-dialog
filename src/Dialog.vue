@@ -4,17 +4,16 @@
     .v-dialog-container
       .v-dialog-header
         a.v-dialog-btn.v-dialog-btn-close(aria-label='Fechar' @click='onClose()')
-        .v-dialog-title(v-if='item.title') {{ item.title }}
+        .v-dialog-title(v-if='item.title', v-html='item.title')
       .v-dialog-body
         .content
-          div {{ item.message }}
+          div(v-html='item.message')
           form(v-if='item.prompt' @submit.prevent='onOk')
             .v-dialog-input(:is='item.prompt.component' v-model='item.prompt.value' ref='prompt' @input='onPrompt')
-            .prompt-error-message(v-if='!valid') {{ item.prompt.invalidMessage }}
+            .prompt-error-message(v-if='!valid', v-html='item.prompt.invalidMessage')
       .v-dialog-footer
-        a.v-dialog-btn.v-dialog-btn-danger(@click='onClose(false)' v-if='item.cancelLabel')
-          | {{ item.cancelLabel }}
-        a.v-dialog-btn.success(@click='onOk', :class='{disabled: !valid}', :disabled='!valid') {{ item.okLabel }}
+        a.v-dialog-btn.v-dialog-btn-danger(@click='onClose(false)' v-if='item.cancelLabel', v-html='item.cancelLabel')
+        a.v-dialog-btn.success(@click='onOk', :class='{disabled: !valid}', :disabled='!valid', v-html='item.okLabel')
 </template>
 
 <script>
@@ -51,7 +50,7 @@ export default {
     onClose(response) {
       this.$emit('close', this.item, response)
     },
-    
+
     onOk() {
       if (this.valid) {
         this.onClose(true)
