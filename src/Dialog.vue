@@ -64,7 +64,7 @@ export default {
 
 <style lang="stylus">
 .v-dialog
-  font-weight 100
+  font-weight 300
   align-items center
   bottom 0
   display none
@@ -130,7 +130,7 @@ export default {
     padding 16px
     .v-dialog-title
       font-size 110%
-      font-weight 400
+      font-weight 500
   .v-dialog-body
     overflow-y auto
     padding 16px
