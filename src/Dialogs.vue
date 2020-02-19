@@ -48,9 +48,9 @@ export default {
     },
 
     prompt(message, options = {}) {
-      let { title, okLabel = 'OK', size, prompt } = options
+      let { title, okLabel = 'OK', size, prompt, cancelLabel } = options
       prompt = Object.assign({ value: '', invalidMessage: 'invalid!', component: Prompt }, prompt)
-      return this.open(message, { title, okLabel, prompt, size })
+      return this.open(message, { title, okLabel, prompt, size, cancelLabel })
     },
 
     remove(item) {
